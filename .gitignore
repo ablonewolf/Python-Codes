@@ -1,0 +1,11 @@
+# Ignore Everything
+*
+# But not python files
+!*.py
+# Or directories
+!*/
+!.gitignore
+# or any txt files
+!*.txt
+# or any json files
+!*.json
