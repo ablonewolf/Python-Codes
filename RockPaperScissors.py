@@ -27,6 +27,8 @@ def determineWinner(choice_1, choice_2):
     elif (choice_1.lower() == 'paper' and choice_2.lower() == "scissors"):
         print('SHOOT!')
         print('player2 wins')
+    elif (choice_1.lower() == choice_2.lower()):
+        print('It\'s a tie!')
     else:
         print('SHOOT!')
         print('player1 wins')
