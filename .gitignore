@@ -9,3 +9,4 @@
 !*.txt
 # or any json files
 !*.json
+.vscode
