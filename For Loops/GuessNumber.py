@@ -30,36 +30,42 @@ def check_if_keep_playing():
 
 
 def play_game():
-    score = 10
-    expected_number = generate_random_number()
-    number = take_input()
-    while (play_game.want_to_play):
-        if (number != None):
-            if (number == expected_number):
-                print("You have guessed it! You won!")
-                print(f"Your score is {score}")
-                score = 10
-                number = 0
+    want_to_play = True
+    while (want_to_play):
+        score = 10
+        has_won = False
+        expected_number = generate_random_number()
+        number = take_input()
+        while (not has_won):
+            if (number == None):
+                number = take_input()
+            elif (score == 0):
+                print("Sorry! You have lost the game.😞😞😞")
+                print(f"Your score is zero.")
                 choice = check_if_keep_playing()
                 if (choice == 'n'):
-                    print("Thanks for playing. Bye!")
-                    play_game.want_to_play = False
-                elif (choice == "y"):
-                    play_game()
-                else:
-                    print("Invalid choice. Enter again")
-                    choice = check_if_keep_playing()
-            elif (number > expected_number):
-                score -= 1
-                number = take_input_if_higher()
+                    print("Thanks for playing the game")
+                    break
+                elif (choice == 'y'):
+                    score = 10
+                    has_won = True
             else:
-                score -= 1
-                number = take_input_if_lower()
+                if (number == expected_number):
+                    print("Congrats! You win the game!😁😁😁")
+                    print(f"Your score is {score}")
+                    choice = check_if_keep_playing()
+                    if (choice == 'n'):
+                        has_won = True
+                        want_to_play = False
+                    elif (choice == 'y'):
+                        score = 10
+                        has_won = True
+                elif (number > expected_number):
+                    score -= 1
+                    number = take_input_if_higher()
+                else:
+                    score -= 1
+                    number = take_input_if_lower()
 
-        else:
-            score -= 1
-            number = take_input()
 
-
-play_game.want_to_play = True
 play_game()
