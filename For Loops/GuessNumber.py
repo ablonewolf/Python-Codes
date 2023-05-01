@@ -29,14 +29,11 @@ def check_if_keep_playing():
     return choice.lower()
 
 
-not_won = True
-
-
 def play_game():
     score = 10
     expected_number = generate_random_number()
     number = take_input()
-    while (play_game.not_won):
+    while (play_game.want_to_play):
         if (number != None):
             if (number == expected_number):
                 print("You have guessed it! You won!")
@@ -46,7 +43,7 @@ def play_game():
                 choice = check_if_keep_playing()
                 if (choice == 'n'):
                     print("Thanks for playing. Bye!")
-                    play_game.not_won = False
+                    play_game.want_to_play = False
                 elif (choice == "y"):
                     play_game()
                 else:
@@ -64,5 +61,5 @@ def play_game():
             number = take_input()
 
 
-play_game.not_won = True
+play_game.want_to_play = True
 play_game()
