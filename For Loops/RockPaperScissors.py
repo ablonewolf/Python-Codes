@@ -11,10 +11,10 @@ def takeInputs():
     player_1_choice = input('Player 1 chooses: ')
     if (player_1_choice.lower() not in options):
         return None, None
-    else:
-        computer_choice = options[random.randint(0, 2)]
-        print(f'Computer chosses: {computer_choice}')
-        return player_1_choice, computer_choice
+
+    computer_choice = options[random.randint(0, 2)]
+    print(f'Computer chosses: {computer_choice}')
+    return player_1_choice, computer_choice
 
 # method to determine the winner of the round
 
@@ -38,11 +38,11 @@ def determineWinner(choice_1, choice_2):
     elif (choice_1.lower() == choice_2.lower()):
         print('It\'s a tie!')
         return False
-    else:
-        print('SHOOT!')
-        print('You win this round.')
-        determineWinner.player_score += 1
-        return True
+
+    print('SHOOT!')
+    print('You win this round.')
+    determineWinner.player_score += 1
+    return True
 
 
 def game():
