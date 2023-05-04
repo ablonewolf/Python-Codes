@@ -1,3 +1,6 @@
+vowels = ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
+
+
 def take_input():
     return input("Enter the sentence: ")
 
@@ -7,11 +10,11 @@ def check_if_character(char):
 
 
 def count_vowel(sentence):
-    return len([char for char in sentence if char in 'aeiou' or char in 'AEIOU'])
+    return len([char for char in sentence if char in vowels])
 
 
 def count_consonent(sentence):
-    return len([char for char in sentence if (check_if_character(char)) and (char not in 'aeiou' and char not in 'AEIOU')])
+    return len([char for char in sentence if (check_if_character(char)) and char in vowels])
 
 
 def main_menu():
