@@ -4,7 +4,7 @@ print('...rock...')
 print('...paper...')
 print('...scissors...')
 
-options = ['rock', 'paper', 'scissors']
+options = ('rock', 'paper', 'scissors')
 
 
 def takeInputs():

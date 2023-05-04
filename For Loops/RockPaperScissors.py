@@ -4,7 +4,7 @@ print('...rock...')
 print('...paper...')
 print('...scissors...')
 
-options = ['rock', 'paper', 'scissors']
+options = ('rock', 'paper', 'scissors')
 
 # method to take inputs
 
@@ -22,7 +22,6 @@ def takeInputs():
 
 
 def determineWinner(choice_1, choice_2):
-
     if (choice_1.lower() == 'rock' and choice_2.lower() == 'paper'):
         print('SHOOT!')
         print('Computer wins this round.')
