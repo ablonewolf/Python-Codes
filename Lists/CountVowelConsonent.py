@@ -2,12 +2,16 @@ def take_input():
     return input("Enter the sentence: ")
 
 
+def check_if_character(char):
+    return ((ord(char) >= 65 and ord(char) <= 90) or (ord(char) >= 97 and ord(char) <= 122))
+
+
 def count_vowel(sentence):
     return len([char for char in sentence if char in 'aeiou' or char in 'AEIOU'])
 
 
 def count_consonent(sentence):
-    return len([char for char in sentence if char not in " .!,;1234567890" and (char not in 'aeiou' and char not in 'AEIOU')])
+    return len([char for char in sentence if (check_if_character(char)) and (char not in 'aeiou' and char not in 'AEIOU')])
 
 
 def main_menu():
