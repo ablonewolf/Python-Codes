@@ -1,17 +1,15 @@
 import random
 
-print('...rock...')
-print('...paper...')
-print('...scissors...')
-
 options = ('rock', 'paper', 'scissors')
+for option in options:
+    print(f"...{option}...")
 
 # method to take inputs
 
 
 def takeInputs():
     player_1_choice = input('Player 1 chooses: ')
-    if (player_1_choice not in options):
+    if (player_1_choice.lower() not in options):
         return None, None
     else:
         computer_choice = options[random.randint(0, 2)]
