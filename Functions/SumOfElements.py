@@ -1,5 +1,4 @@
-def sum_of_elements(args):
-    print(args)
+def sum_of_elements(*args):
     sum = 0
     for num in args:
         sum += num
@@ -19,7 +18,7 @@ def take_input():
 
 def main_menu():
     numbers = take_input()
-    print(f"The sum of {numbers} is: {sum_of_elements(numbers)}")
+    print(f"The sum of {numbers} is: {sum_of_elements(*numbers)}")
 
 
 main_menu()
