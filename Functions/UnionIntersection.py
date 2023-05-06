@@ -1,11 +1,10 @@
-def find_intersection(first_collection, second_collection):
-    return [item for item in first_collection if item in second_collection]
+find_intersection = lambda first_collection, second_collection: [
+    item for item in first_collection if item in second_collection
+]
 
-
-def find_union(first_collection, second_collection):
-    union_list = first_collection + \
-        [item for item in second_collection if item not in first_collection]
-    return sorted(union_list)
+find_union = lambda first_collection, second_collection: sorted(
+    first_collection +
+    [item for item in second_collection if item not in first_collection])
 
 
 def main_menu():
@@ -26,9 +25,11 @@ def main_menu():
         second_collection.append(item)
         i += 1
     print(
-        f"Union of the two lists is: {find_union(first_collection, second_collection)}")
+        f"Union of the two lists is: {find_union(first_collection, second_collection)}"
+    )
     print(
-        f"Intersection of the two lists is: {find_intersection(first_collection, second_collection)}")
+        f"Intersection of the two lists is: {find_intersection(first_collection, second_collection)}"
+    )
 
 
 main_menu()
