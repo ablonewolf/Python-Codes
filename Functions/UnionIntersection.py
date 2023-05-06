@@ -1,34 +1,30 @@
-find_intersection = lambda first_collection, second_collection: [
-    item for item in first_collection if item in second_collection
-]
+find_intersection = lambda first_list, second_list: list(
+    filter(lambda item: item in second_list, first_list))
 
-find_union = lambda first_collection, second_collection: sorted(
-    first_collection +
-    [item for item in second_collection if item not in first_collection])
+find_union = lambda first_list, second_list: sorted(first_list + list(
+    filter(lambda item: item not in first_list, second_list)))
 
 
 def main_menu():
     n = int(input("Enter the size of the first list: "))
     print("Enter the elements of the first list.")
-    first_collection = []
+    first_list = []
     i = 0
     while i < n:
         item = int(input())
-        first_collection.append(item)
+        first_list.append(item)
         i += 1
     n = int(input("Enter the size of the second list: "))
     print("Enter the elements of the second list.")
-    second_collection = []
+    second_list = []
     i = 0
     while i < n:
         item = int(input())
-        second_collection.append(item)
+        second_list.append(item)
         i += 1
+    print(f"Union of the two lists is: {find_union(first_list, second_list)}")
     print(
-        f"Union of the two lists is: {find_union(first_collection, second_collection)}"
-    )
-    print(
-        f"Intersection of the two lists is: {find_intersection(first_collection, second_collection)}"
+        f"Intersection of the two lists is: {find_intersection(first_list, second_list)}"
     )
 
 
