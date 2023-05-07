@@ -25,6 +25,7 @@ def main_menu():
     string = take_input()
     if string is None:
         main_menu()
+        return
     letter_count = multiple_letter_count(string)
     print_letter_count(letter_count)
 
