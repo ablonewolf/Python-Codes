@@ -15,9 +15,11 @@ def take_input():
         print("Invalid Input. Please try again.")
         raise ValueError
     return text, color
-    
+
+
 def main_menu():
     text, color = take_input()
     color_the_text(text, color)
+
 
 main_menu()
