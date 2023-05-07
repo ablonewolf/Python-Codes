@@ -1,5 +1,5 @@
 def check_character(char):
-    return (ord(char) >= 65 and ord(char) <= 90 or ord(char) >= 97 and ord(char) <= 122)
+    return 65 <= ord(char) <= 90 or 97 <= ord(char) <= 122
 
 
 def multiple_letter_count(string):
@@ -23,7 +23,7 @@ def print_letter_count(dictionary):
 
 def main_menu():
     string = take_input()
-    if (string == None):
+    if string is None:
         main_menu()
     letter_count = multiple_letter_count(string)
     print_letter_count(letter_count)

@@ -3,10 +3,10 @@ def is_palindrome(string):
     last_index = -1
     for char in string:
         # print(char + " " + string[last_index])
-        if (char == ' ' or string[last_index] == ' '):
+        if char == ' ' or string[last_index] == ' ':
             continue
         else:
-            if (char.lower() == string[last_index].lower()):
+            if char.lower() == string[last_index].lower():
                 last_index = last_index - 1
             else:
                 is_palindrome = False
@@ -17,7 +17,7 @@ def is_palindrome(string):
 
 def take_input():
     string = input("Enter the string to check whether it is a palindrome: ")
-    if (len(string) > 0):
+    if len(string) > 0:
         return string
     else:
         print("Invalid input. Please try again.")
@@ -26,11 +26,12 @@ def take_input():
 
 def main_menu():
     string = take_input()
-    if (string == None):
+    if string is None:
         main_menu()
+        return
     else:
         palindrome = is_palindrome(string)
-    if (palindrome):
+    if palindrome:
         print(f"{string} is a palindrome string.")
     else:
         print(f"{string} is not a palindrome string.")
