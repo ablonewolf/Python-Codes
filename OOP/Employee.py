@@ -7,6 +7,10 @@ class Employee:
         self.programming_language = programming_language
         Employee.active_employee += 1
 
+    def __repr__(self):
+        return f"{self.name} is an employee with ID no: {self.employee_id}. This employee prefers " \
+               f"{self.programming_language} as his primary programming language."
+
     def print_info(self):
         print(f"Name of the employee: {self.name}, employee ID: {self.employee_id} and his preferred programming "
               f"language is {self.programming_language}")
@@ -30,8 +34,13 @@ print(f"Current number of total active employees is {Employee.get_active_employe
 
 Mosfik = Employee.user_from_string("Mosfikur Rahman,11502,Java")
 print(f"Current number of total active employees is {Employee.get_active_employees()}")
+print(Arka)
 Arka.print_info()
+print(Farhan)
 Farhan.print_info()
+print(Nipa)
 Nipa.print_info()
+print(Akif)
 Akif.print_info()
+print(Mosfik)
 Mosfik.print_info()
