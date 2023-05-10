@@ -36,10 +36,6 @@ class Engineer(Employee):
         super().__init__(name, employee_id, age)
         self._programming_language = programming_language
 
-    def __int__(self, name, employee_id, age, programming_language):
-        super.__init__(name, employee_id, age)
-        self._programming_language = programming_language
-
     def __repr__(self):
         return f"{self.name} is an employee with ID no: {self.employee_id}. This employee is {self.age} years old " \
                f"and has a preference on {self.programming_language} as a programming language."
